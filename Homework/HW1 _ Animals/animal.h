@@ -4,6 +4,7 @@
 #include "fish.h"
 #include "bird.h"
 #include "carnivore.h"
+#include <string>
 
 /*A struct which describes all animals*/
 struct animal{
@@ -11,7 +12,7 @@ struct animal{
     enum key{FISH, BIRD, CARNIVORE};
 
     key k; // key
-    string name;
+    std::string name;
     int weight;
 
     union {
