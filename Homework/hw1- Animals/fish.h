@@ -2,6 +2,7 @@
 #define __fish__
 
 #include <string>
+#include "rnd.h"
 
 // Fish
 struct fish{
@@ -11,12 +12,12 @@ struct fish{
 };
 
 // Enter fish parameters form file
-void In(fish &fish, std::ifstream &ifstream);
+void in(fish &f, std::ifstream &ifst);
 
 // Enter random parameters for fish
-void InRnd(fish &fish);
+void InRnd(fish &f);
 
-// Output fish parameters in a formatable stream
-void Out(fish &fish, std::ofstream &ofstream)
+// Output fish parameters In a formatable stream
+void Out(fish &f, std::ofstream &ofst);
 
 #endif //__fish__

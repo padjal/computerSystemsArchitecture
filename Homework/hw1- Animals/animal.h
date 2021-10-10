@@ -3,13 +3,13 @@
 
 #include "fish.h"
 #include "bird.h"
-#include "carnivore.h"
+#include "beast.h"
 #include <string>
 
 /*A struct which describes all animals*/
 struct animal{
     // A key for each type of animal
-    enum key{FISH, BIRD, CARNIVORE};
+    enum key{FISH, BIRD, BEAST};
 
     key k; // key
     std::string name;
@@ -18,9 +18,18 @@ struct animal{
     union {
         fish f;
         bird b;
-        carnivore c;
+        beast c;
     };
 };
+
+// Enter animal details from file.
+animal *In(std::ifstream &ifdt);
+
+// Enter animal details randomly.
+animal *InRnd();
+
+// Display animal details.
+void Out(animal &s, std::ofstream &ofst);
 
 #endif //__animal__
 
