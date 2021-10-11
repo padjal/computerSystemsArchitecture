@@ -24,4 +24,6 @@ void inRnd(container &c, int size);
 // Container elements output
 void out(container &c, FILE *f);
 
+void sortContainer(container &c, FILE *f);
+
 #endif //__container__

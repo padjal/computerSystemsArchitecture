@@ -2,7 +2,6 @@
  * Constains main fucntion, which enables testing.
  */
 
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
@@ -66,8 +65,8 @@ int main(int argc, char* argv[]) {
 
     //TODO
     // The 2nd part of task
-    std::ofstream ofst2(argv[4]);
-    //ofst2 << "Perimeter sum = " << PerimeterSum(c) << "\n";
+    FILE *f2 = fopen(argv[4], "w");
+    sortContainer(c, f2);
 
     clear(c);
     printf("%s", "Stop\n");

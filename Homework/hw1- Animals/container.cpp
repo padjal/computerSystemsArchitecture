@@ -62,3 +62,19 @@ void out(container &c, FILE *f) {
         out(*(c.cont[i]), f);
     }
 }
+
+void sortContainer(container &c, FILE *f){
+    double sum = 0.0;
+    for (int i = 0 ; i < c.len ; ++i) {
+        sum += specialNumber(*(c.cont[i]));
+    }
+    double average = sum/c.len;
+    fprintf(f, "The average special number is: %f", average);
+
+    fprintf(f, "The sorted elements are: \n");
+    for (int i = 0 ; i < c.len ; ++i) {
+        if(specialNumber(*(c.cont[i])) >= average){
+            out(*(c.cont[i]), f);
+        }
+    }
+}
