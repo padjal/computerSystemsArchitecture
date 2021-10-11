@@ -76,12 +76,11 @@ double specialNumber(animal &a){
     switch (a.k) {
         case animal::FISH:
             return specialNumber(a.f);
-            break;
         case animal::BIRD:
             return specialNumber(a.bi);
-            break;
         case animal::BEAST:
             return specialNumber(a.be);
-            break;
+        default:
+            return 0.0;
     }
 }

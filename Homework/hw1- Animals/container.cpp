@@ -63,6 +63,11 @@ void out(container &c, FILE *f) {
     }
 }
 
+/**
+ * Sorts the container elements given a predefined condition.
+ * @param c
+ * @param f
+ */
 void sortContainer(container &c, FILE *f){
     double sum = 0.0;
     for (int i = 0 ; i < c.len ; ++i) {
