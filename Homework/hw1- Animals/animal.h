@@ -21,7 +21,7 @@ struct animal{
 };
 
 // Enter animal details from file.
-animal *in(std::ifstream &ifst);
+animal *in(FILE *file);
 
 // Enter animal details randomly.
 animal *inRnd();

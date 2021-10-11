@@ -11,7 +11,7 @@ struct bird{
 };
 
 // Enter bird parameters form file
-void in(bird &bi, std::ifstream &ifst);
+void in(bird &bi, FILE *file);
 
 // Enter random parameters for bird
 void inRnd(bird &bi);

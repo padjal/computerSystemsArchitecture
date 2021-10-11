@@ -3,13 +3,14 @@
  */
 
 #include "beast.h"
-#include <fstream>
 #include "rnd.h"
 
 // Enter beast parameters form file
-void in(beast &be, std::ifstream &ifst){
+void in(beast &be, FILE *file){
     int type;
-    ifst >> be.name >> be.weight >> type;
+    fscanf(file,"%s", be.name);
+    fscanf(file,"%i", &be.weight);
+    fscanf(file,"%i", &type);
 
     if(type == 0){
         be.type = beast::CARNIVORE;

@@ -1,7 +1,7 @@
 #ifndef __fish__
 #define __fish__
 
-#include <string>
+#include <cstdio>
 #include "rnd.h"
 
 // Fish
@@ -14,7 +14,7 @@ struct fish{
 };
 
 // Enter fish parameters form file
-void in(fish &f, std::ifstream &ifst);
+void in(fish &f, FILE *file);
 
 // Enter random parameters for fish
 void inRnd(fish &f);

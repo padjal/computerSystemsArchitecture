@@ -6,25 +6,25 @@
  * @param ifstream The file stream used for the data.
  * @return The animal with given properties.
  */
-animal* in(std::ifstream &ifst){
+animal* in(FILE *file){
     animal* a;
     int k;
-    ifst >> k;
+    fscanf(file,"%i", &k);
     switch (k) {
         case 1:
             a = new struct animal;
             a->k = animal::FISH;
-            in(a->f, ifst);
+            in(a->f, file);
             return a;
         case 2:
             a = new struct animal;
             a->k = animal::BIRD;
-            in(a->bi, ifst);
+            in(a->bi, file);
             return a;
         case 3:
             a = new struct animal;
             a->k = animal::BEAST;
-            in(a->be, ifst);
+            in(a->be, file);
             return a;
         default:
             return 0;

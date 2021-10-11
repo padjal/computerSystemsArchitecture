@@ -37,8 +37,8 @@ int main(int argc, char* argv[]) {
     init(c);
 
     if(!strcmp(argv[1], "-f")) {
-        std::ifstream ifst(argv[2]);
-        in(c, ifst);
+        FILE *f = fopen(argv[2], "r");
+        in(c, f);
     }
     else if(!strcmp(argv[1], "-n")) {
         auto size = atoi(argv[2]);

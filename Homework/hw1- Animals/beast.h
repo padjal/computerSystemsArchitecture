@@ -1,7 +1,7 @@
 #ifndef __carnivore__
 #define __carnivore__
 
-#include <string>
+#include <cstdio>
 
 // beast
 struct beast{
@@ -12,7 +12,7 @@ struct beast{
 };
 
 // Enter beast parameters form file
-void in(beast &be, std::ifstream &ifst);
+void in(beast &be, FILE *file);
 
 // Enter random parameters for beast
 void inRnd(beast &be);

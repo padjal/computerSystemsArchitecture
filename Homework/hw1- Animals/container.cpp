@@ -28,16 +28,19 @@ void clear(container &c) {
  * @param c The container used.
  * @param ifst The stream used.
  */
-void in(container &c, std::ifstream &ifst) {
-    while(!ifst.eof()) {
-        if((c.cont[c.len] = in(ifst)) != 0) {
+void in(container &c, FILE *file) {
+    while(!feof(file)) {
+        if((c.cont[c.len] = in(file)) != 0) {
             c.len++;
         }
     }
 }
 
-//------------------------------------------------------------------------------
-// Случайный ввод содержимого контейнера
+/**
+ * Random input in container.
+ * @param c The selected container.
+ * @param size The number of elements to be inserted.
+ */
 void inRnd(container &c, int size) {
     while(c.len < size) {
         if((c.cont[c.len] = inRnd()) != nullptr) {

@@ -3,12 +3,13 @@
  */
 
 #include "fish.h"
-#include <fstream>
 
 // Enter fish parameters form file
-void in(fish &f, std::ifstream &ifst){
+void in(fish &f, FILE *file){
     int hab;
-    ifst >> f.name >> f.weight >> hab;
+    fscanf(file,"%s", f.name);
+    fscanf(file,"%i", &f.weight);
+    fscanf(file,"%i", &hab);
 
     if(hab == 0){
         f.h = fish::RIVER;

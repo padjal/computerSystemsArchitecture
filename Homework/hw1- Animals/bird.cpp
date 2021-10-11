@@ -3,14 +3,14 @@
  */
 
 #include "bird.h"
-#include <fstream>
 #include "rnd.h"
 
 // Enter fish parameters form file
-void in(bird &bi, std::ifstream &ifst){
+void in(bird &bi, FILE *file){
     int isMig;
-    ifst >> bi.name ;
-    ifst >> bi.weight >> isMig;
+    fscanf(file,"%s", bi.name);
+    fscanf(file,"%i", &bi.weight);
+    fscanf(file,"%i", &isMig);
 
     if(isMig == 0){
         bi.isMigrating = false;

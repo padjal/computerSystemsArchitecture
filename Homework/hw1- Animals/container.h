@@ -16,7 +16,7 @@ void init(container &c);
 void clear(container &c);
 
 // Enter container element from given file stream
-void in(container &c, std::ifstream &ifst);
+void in(container &c, FILE *file);
 
 // randomInt insert In container
 void inRnd(container &c, int size);
