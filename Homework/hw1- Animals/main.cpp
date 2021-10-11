@@ -26,6 +26,9 @@ void errMessage2() {
 }
 
 int main(int argc, char* argv[]) {
+    clock_t t;
+    t = clock();
+
     if(argc != 5) {
         errMessage1();
         return 1;
@@ -70,5 +73,8 @@ int main(int argc, char* argv[]) {
 
     clear(c);
     printf("%s", "Stop\n");
+
+    t = clock() - t;
+    printf("The program executed in %f seconds.", (double)t/CLOCKS_PER_SEC);
     return 0;
 }

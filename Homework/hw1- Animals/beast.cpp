@@ -2,6 +2,7 @@
  * beast.cpp - contains functions for working with beast
  */
 
+#include <cstring>
 #include "beast.h"
 #include "rnd.h"
 
@@ -23,7 +24,9 @@ void in(beast &be, FILE *file){
 
 // Enter random parameters for beast
 void inRnd(beast &be){
-    be.type = randomInt(3) % 3 + 1;
+    be.type = randomInt(3) % 3;
+    be.weight = randomInt(2000);
+    strcpy(be.name, "BeastName");
 }
 
 // Output fish parameters In a formatable stream
@@ -42,7 +45,7 @@ void out(beast &be, FILE *file){
             break;
     }
 
-    fprintf(file, "It is a Beast: name = %s , weight: %i, is: %s, and has a special number: %f\n",
+    fprintf(file, "It is a Beast: name = %s, weight: %i, is: %s, and has a special number: %f\n",
             be.name, be.weight, type, specialNumber(be));
 }
 

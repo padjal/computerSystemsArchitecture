@@ -2,8 +2,10 @@
  * bird.cpp - contains functions for working with bird
  */
 
+#include <cstring>
 #include "bird.h"
 #include "rnd.h"
+#include "stdlib.h"
 
 // Enter fish parameters form file
 void in(bird &bi, FILE *file){
@@ -22,7 +24,8 @@ void in(bird &bi, FILE *file){
 // Enter random parameters for beast
 void inRnd(bird &bi){
     int isMig = randomInt(2) % 2 + 1;
-
+    bi.weight = randomInt(2000);
+    strcpy(bi.name, "BirdName");
     if(isMig == 0){
         bi.isMigrating = false;
     }else if(isMig == 1){
