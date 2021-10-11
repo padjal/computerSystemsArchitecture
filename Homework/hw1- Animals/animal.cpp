@@ -8,28 +8,21 @@
  */
 animal* in(std::ifstream &ifst){
     animal* a;
-    std::string name;
-    int k, weight;
-    ifst >> name >> weight >> k;
+    int k;
+    ifst >> k;
     switch (k) {
         case 1:
             a = new struct animal;
-            a->name = name;
-            a->weight = weight;
             a->k = animal::FISH;
             in(a->f, ifst);
             return a;
         case 2:
             a = new struct animal;
-            a->name = name;
-            a->weight = weight;
             a->k = animal::BIRD;
             in(a->bi, ifst);
             return a;
         case 3:
             a = new struct animal;
-            a->name = name;
-            a->weight = weight;
             a->k = animal::BEAST;
             in(a->be, ifst);
             return a;

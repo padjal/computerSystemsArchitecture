@@ -9,7 +9,7 @@
 // Enter beast parameters form file
 void in(beast &be, std::ifstream &ifst){
     int type;
-    ifst >> type;
+    ifst >> be.name >> be.weight >> type;
 
     if(type == 0){
         be.type = beast::CARNIVORE;
@@ -27,5 +27,21 @@ void inRnd(beast &be){
 
 // Output fish parameters In a formatable stream
 void out(beast &be, std::ofstream &ofst){
-    ofst << "It is an Fish: name = ";
+    char* type;
+
+    switch (be.type) {
+        case 0:
+            type = "carnivore";
+            break;
+        case 1:
+            type = "herbivore";
+            break;
+        case 2:
+            type = "omnivore";
+            break;
+    }
+    ofst << "It is a Beast: name = "
+    << be.name << ", weight = "
+    << be.weight << ", who is a: "
+    << type << std::endl;
 }

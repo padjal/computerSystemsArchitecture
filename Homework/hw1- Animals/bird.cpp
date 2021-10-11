@@ -9,7 +9,8 @@
 // Enter fish parameters form file
 void in(bird &bi, std::ifstream &ifst){
     int isMig;
-    ifst >> isMig;
+    ifst >> bi.name ;
+    ifst >> bi.weight >> isMig;
 
     if(isMig == 0){
         bi.isMigrating = false;
@@ -29,7 +30,19 @@ void inRnd(bird &bi){
     }
 };
 
-// Output fish parameters In a formatable stream
-void out(bird &b, std::ofstream &ofst){
-    ofst << "It is an Bird: name = ";
+// Output bird parameters In a formatable stream
+void out(bird &bi, std::ofstream &ofst){
+    char* migrating;
+
+    if(bi.isMigrating){
+        migrating = "is";
+    }else{
+        migrating = "is not";
+    }
+
+    ofst << "It is a Bird: name = "
+         << bi.name << ", weight: "
+         << bi.weight << ", and "
+         << migrating << " migrating"
+         << std::endl;
 }

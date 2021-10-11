@@ -11,9 +11,6 @@
 struct animal{
     // A key for each type of animal
     enum key{FISH, BIRD, BEAST};
-
-    std::string name;
-    int weight;
     key k; // key
 
     union {

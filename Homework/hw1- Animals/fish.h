@@ -6,8 +6,10 @@
 
 // Fish
 struct fish{
-    enum habitat{RIVER, SEA, LAKE, OCEAN};
+    enum habitat{RIVER, SEA, LAKE};
 
+    char name[255];
+    int weight;
     habitat h;
 };
 

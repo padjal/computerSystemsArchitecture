@@ -6,6 +6,8 @@
 // bird
 struct bird{
     bool isMigrating;
+    char name[255];
+    int weight;
 };
 
 // Enter bird parameters form file
