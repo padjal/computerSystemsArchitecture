@@ -15,9 +15,9 @@ struct fish{
 void in(fish &f, std::ifstream &ifst);
 
 // Enter random parameters for fish
-void InRnd(fish &f);
+void inRnd(fish &f);
 
 // Output fish parameters In a formatable stream
-void Out(fish &f, std::ofstream &ofst);
+void out(fish &f, std::ofstream &ofst);
 
 #endif //__fish__

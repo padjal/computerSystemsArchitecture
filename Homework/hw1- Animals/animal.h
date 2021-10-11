@@ -5,31 +5,32 @@
 #include "bird.h"
 #include "beast.h"
 #include <string>
+#include <fstream>
 
 /*A struct which describes all animals*/
 struct animal{
     // A key for each type of animal
     enum key{FISH, BIRD, BEAST};
 
-    key k; // key
     std::string name;
     int weight;
+    key k; // key
 
     union {
         fish f;
-        bird b;
-        beast c;
+        bird bi;
+        beast be;
     };
 };
 
 // Enter animal details from file.
-animal *In(std::ifstream &ifdt);
+animal *in(std::ifstream &ifst);
 
 // Enter animal details randomly.
-animal *InRnd();
+animal *inRnd();
 
 // Display animal details.
-void Out(animal &s, std::ofstream &ofst);
+void out(animal &a, std::ofstream &ofst);
 
 #endif //__animal__
 

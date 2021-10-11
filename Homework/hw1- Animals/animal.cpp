@@ -6,7 +6,7 @@
  * @param ifstream The file stream used for the data.
  * @return The animal with given properties.
  */
-animal* In(std::ifstream &ifst){
+animal* in(std::ifstream &ifst){
     animal* a;
     std::string name;
     int k, weight;
@@ -24,55 +24,55 @@ animal* In(std::ifstream &ifst){
             a->name = name;
             a->weight = weight;
             a->k = animal::BIRD;
-            In(a->b, ifst);
+            in(a->bi, ifst);
             return a;
         case 3:
             a = new struct animal;
             a->name = name;
             a->weight = weight;
-            a->k = animal::CARNIVORE;
-            In(a->c, ifst);
+            a->k = animal::BEAST;
+            in(a->be, ifst);
             return a;
         default:
             return 0;
     }
 }
 
-// Random input of animal details.
-animal *InRnd(){
+// randomInt input of animal details.
+animal *inRnd(){
     animal* animal;
     auto k = rand() % 3 + 1;
     switch (k) {
         case 1:
             animal = new struct animal;
             animal->k = animal::FISH;
-            InRnd(animal->f);
+            inRnd(animal->f);
             return animal;
         case 2:
             animal = new struct animal;
             animal->k = animal::BIRD;
-            InRnd(animal->b);
+            inRnd(animal->bi);
             return animal;
         case 3:
             animal = new struct animal;
             animal->k = animal::BEAST;
-            InRnd(animal->c);
+            inRnd(animal->be);
             return animal;
         default:
             return 0;
     }
 }
 
-void Out(animal &a, std::ofstream &ofst){
+void out(animal &a, std::ofstream &ofst){
     switch (a.k) {
         case animal::FISH:
-            Out(a.f, ofst);
+            out(a.f, ofst);
             break;
         case animal::BIRD:
-            Out(a.b, ofst);
+            out(a.bi, ofst);
             break;
         case animal::BEAST:
-            Out(a.c, ofst);
+            out(a.be, ofst);
             break;
         default:
             ofst << "Incorrect figure!" << std::endl;

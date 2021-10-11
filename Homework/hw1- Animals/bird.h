@@ -9,12 +9,12 @@ struct bird{
 };
 
 // Enter bird parameters form file
-void In(bird &b, std::ifstream &ifst);
+void in(bird &bi, std::ifstream &ifst);
 
 // Enter random parameters for bird
-void InRnd(bird &b);
+void inRnd(bird &bi);
 
 // Output bird parameters In a formatable stream
-void Out(bird &b, std::ofstream &ofst);
+void out(bird &bi, std::ofstream &ofst);
 
 #endif //__bird__

@@ -10,18 +10,18 @@ struct container{
 };
 
 // Initializing the container
-void Init(container &c);
+void init(container &c);
 
 // Clear the container from its elements (Memory cleanup)
-void Clear(container &c);
+void clear(container &c);
 
 // Enter container element from given file stream
-void In(container &c, std::ifstream &ifst);
+void in(container &c, std::ifstream &ifst);
 
-// Random insert In container
-void InRnd(container &c, int size);
+// randomInt insert In container
+void inRnd(container &c, int size);
 
 // Container elements output
-void Out(container &c, std::ofstream &ofst);
+void out(container &c, std::ofstream &ofst);
 
 #endif //__container__

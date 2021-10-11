@@ -7,25 +7,29 @@
 #include "rnd.h"
 
 // Enter fish parameters form file
-void in(bird &b, std::ifstream &ifst){
-    int type;
-    ifst >> type;
+void in(bird &bi, std::ifstream &ifst){
+    int isMig;
+    ifst >> isMig;
 
-    if(type == 0){
-        b.type = beast::CARNIVORE;
-    }else if(type == 1){
-        b.type = beast::HERBIVORE;
-    }else if(type == 2){
-        b.type = beast::OMNIVORE;
+    if(isMig == 0){
+        bi.isMigrating = false;
+    }else if(isMig == 1){
+        bi.isMigrating = true;
     }
 }
 
 // Enter random parameters for beast
-void InRnd(beast &b){
-    b.type = Random(3) % 3 + 1;
+void inRnd(bird &bi){
+    int isMig = randomInt(2) % 2 + 1;
+
+    if(isMig == 0){
+        bi.isMigrating = false;
+    }else if(isMig == 1){
+        bi.isMigrating = true;
+    }
 };
 
 // Output fish parameters In a formatable stream
-void Out(beast &f, std::ofstream &ofst){
-    ofst << "It is an Fish: name = ";
+void out(bird &b, std::ofstream &ofst){
+    ofst << "It is an Bird: name = ";
 }

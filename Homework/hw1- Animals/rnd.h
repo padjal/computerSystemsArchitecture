@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 
-inline int Random(int limit){
+inline int randomInt(int limit){
     return rand() % limit + 1;
 }
 

@@ -11,12 +11,12 @@ struct beast{
 };
 
 // Enter beast parameters form file
-void In(beast &c, std::ifstream &ifst);
+void in(beast &be, std::ifstream &ifst);
 
 // Enter random parameters for beast
-void InRnd(beast &c);
+void inRnd(beast &be);
 
 // Output beast parameters In a formatable stream
-void Out(beast &c, std::ofstream &ofst);
+void out(beast &be, std::ofstream &ofst);
 
 #endif //__carnivore__

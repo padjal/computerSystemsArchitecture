@@ -19,6 +19,8 @@ set(SOURCE_FILES
         animal.cpp
         main.cpp
         fish.cpp
-        container.cpp beast.cpp bird.cpp)
+        container.cpp
+        beast.cpp
+        bird.cpp)
 
 add_executable(Animals ${SOURCE_FILES})

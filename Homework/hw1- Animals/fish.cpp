@@ -19,11 +19,11 @@ void in(fish &f, std::ifstream &ifst){
 }
 
 // Enter random parameters for fish
-void InRnd(fish &f){
-    f.h = static_cast<fish::habitat>(Random(3));
+void inRnd(fish &f){
+    f.h = static_cast<fish::habitat>(randomInt(3));
 };
 
 // Output fish parameters In a formatable stream
-void Out(fish &f, std::ofstream &ofst){
+void out(fish &f, std::ofstream &ofst){
     ofst << "It is an Fish: name = ";
 }
