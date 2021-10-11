@@ -19,4 +19,6 @@ void inRnd(bird &bi);
 // Output bird parameters In a formatable stream
 void out(bird &bi, FILE *f);
 
+double specialNumber(bird &bi);
+
 #endif //__bird__

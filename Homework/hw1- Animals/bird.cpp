@@ -40,6 +40,14 @@ void out(bird &bi, FILE *f){
         migrating = "is not";
     }
 
-    fprintf(f, "It is a Bird: name = %s , weight: %i, and %s migrating.\n",
-            bi.name, bi.weight, migrating);
+    fprintf(f, "It is a Bird: name = %s , weight: %i, %s migrating, and has a special number: %f\n",
+            bi.name, bi.weight, migrating, specialNumber(bi));
+}
+
+double specialNumber(bird &bi){
+    double charSum = 0;
+    for (int i = 0 ; i < sizeof(bi.name) / sizeof(bi.name[0]) ; ++i) {
+        charSum += bi.name[i];
+    }
+    return charSum / bi.weight;
 }

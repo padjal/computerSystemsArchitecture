@@ -22,4 +22,6 @@ void inRnd(fish &f);
 // Output fish parameters In a formatable stream
 void out(fish &fi, FILE *f);
 
+double specialNumber(fish &fi);
+
 #endif //__fish__

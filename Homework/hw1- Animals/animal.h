@@ -29,5 +29,7 @@ animal *inRnd();
 // Display animal details.
 void out(animal &a, FILE *file);
 
+double specialNumber(animal &a);
+
 #endif //__animal__
 

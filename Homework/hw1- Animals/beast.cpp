@@ -42,6 +42,14 @@ void out(beast &be, FILE *file){
             break;
     }
 
-    fprintf(file, "It is a Beast: name = %s , weight: %i, and is: %s.\n",
-            be.name, be.weight, type);
+    fprintf(file, "It is a Beast: name = %s , weight: %i, is: %s, and has a special number: %f\n",
+            be.name, be.weight, type, specialNumber(be));
+}
+
+double specialNumber(beast &be){
+    double charSum = 0;
+    for (int i = 0 ; i < sizeof(be.name) / sizeof(be.name[0]) ; ++i) {
+        charSum += be.name[i];
+    }
+    return charSum / be.weight;
 }

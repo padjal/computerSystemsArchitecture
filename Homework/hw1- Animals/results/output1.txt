@@ -1,10 +1,10 @@
 Filled container:
 Container contains 8 elements
-1: It is a Fish: name = Fish1 , weight: 150, and live in: River.
-2: It is a Fish: name = Fish2 , weight: 450, and live in: Sea.
-3: It is a Fish: name = Fish3 , weight: 1500, and live in: Lake.
-4: It is a Bird: name = Bird1 , weight: 50, and is migrating.
-5: It is a Bird: name = Bird2 , weight: 456, and is not migrating.
-6: It is a Beast: name = Beast1 , weight: 90, and is: carnivore.
-7: It is a Beast: name = Beast2 , weight: 130, and is: herbivore.
-8: It is a Beast: name = Beast3 , weight: 666, and is: omnivore.
+1: It is a Fish: name = Fish1 , weight: 150, lives in: River, and has a special number of: 2.953333
+2: It is a Fish: name = Fish2 , weight: 450, lives in: Sea, and has a special number of: 0.986667
+3: It is a Fish: name = Fish3 , weight: 1500, lives in: Lake, and has a special number of: 0.296667
+4: It is a Bird: name = Bird1 , weight: 50, is migrating, and has a special number: 8.680000
+5: It is a Bird: name = Bird2 , weight: 456, is not migrating, and has a special number: 0.953947
+6: It is a Beast: name = Beast1 , weight: 90, is: carnivore, and has a special number: 6.044444
+7: It is a Beast: name = Beast2 , weight: 130, is: herbivore, and has a special number: 4.192308
+8: It is a Beast: name = Beast3 , weight: 666, is: omnivore, and has a special number: 0.819820

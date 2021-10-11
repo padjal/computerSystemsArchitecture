@@ -20,4 +20,6 @@ void inRnd(beast &be);
 // Output beast parameters In a formatable stream
 void out(beast &be, FILE *file);
 
+double specialNumber(beast &be);
+
 #endif //__carnivore__

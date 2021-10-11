@@ -40,6 +40,14 @@ void out(fish &fi, FILE *file){
             break;
     }
 
-    fprintf(file, "It is a Fish: name = %s , weight: %i, and live in: %s.\n",
-            fi.name, fi.weight, habitat);
+    fprintf(file, "It is a Fish: name = %s , weight: %i, lives in: %s, and has a special number of: %f\n",
+            fi.name, fi.weight, habitat, specialNumber(fi));
+}
+
+double specialNumber(fish &fi){
+    double charSum = 0;
+    for (int i = 0 ; i < sizeof(fi.name) / sizeof(fi.name[0]) ; ++i) {
+        charSum += fi.name[i];
+    }
+    return charSum / fi.weight;
 }

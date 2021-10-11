@@ -71,3 +71,17 @@ void out(animal &a, FILE *f){
             fprintf(f, "%s", "Incorrect figure!\n");
     }
 }
+
+double specialNumber(animal &a){
+    switch (a.k) {
+        case animal::FISH:
+            return specialNumber(a.f);
+            break;
+        case animal::BIRD:
+            return specialNumber(a.bi);
+            break;
+        case animal::BEAST:
+            return specialNumber(a.be);
+            break;
+    }
+}
