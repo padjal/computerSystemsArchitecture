@@ -22,6 +22,6 @@ void in(container &c, std::ifstream &ifst);
 void inRnd(container &c, int size);
 
 // Container elements output
-void out(container &c, std::ofstream &ofst);
+void out(container &c, FILE *f);
 
 #endif //__container__

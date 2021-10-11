@@ -31,7 +31,7 @@ void inRnd(bird &bi){
 };
 
 // Output bird parameters In a formatable stream
-void out(bird &bi, std::ofstream &ofst){
+void out(bird &bi, FILE *f){
     char* migrating;
 
     if(bi.isMigrating){
@@ -40,9 +40,6 @@ void out(bird &bi, std::ofstream &ofst){
         migrating = "is not";
     }
 
-    ofst << "It is a Bird: name = "
-         << bi.name << ", weight: "
-         << bi.weight << ", and "
-         << migrating << " migrating"
-         << std::endl;
+    fprintf(f, "It is a Bird: name = %s , weight: %i, and %s migrating.\n",
+            bi.name, bi.weight, migrating);
 }

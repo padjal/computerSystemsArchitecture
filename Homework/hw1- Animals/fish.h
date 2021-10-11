@@ -20,6 +20,6 @@ void in(fish &f, std::ifstream &ifst);
 void inRnd(fish &f);
 
 // Output fish parameters In a formatable stream
-void out(fish &f, std::ofstream &ofst);
+void out(fish &fi, FILE *f);
 
 #endif //__fish__

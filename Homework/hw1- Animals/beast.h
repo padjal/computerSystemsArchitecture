@@ -18,6 +18,6 @@ void in(beast &be, std::ifstream &ifst);
 void inRnd(beast &be);
 
 // Output beast parameters In a formatable stream
-void out(beast &be, std::ofstream &ofst);
+void out(beast &be, FILE *file);
 
 #endif //__carnivore__

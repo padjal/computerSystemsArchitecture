@@ -25,9 +25,9 @@ void inRnd(fish &f){
 };
 
 // Output fish parameters in a formatable stream
-void out(fish &f, std::ofstream &ofst){
+void out(fish &fi, FILE *file){
     char* habitat;
-    switch (f.h) {
+    switch (fi.h) {
         case 0:
             habitat = "River";
             break;
@@ -39,8 +39,6 @@ void out(fish &f, std::ofstream &ofst){
             break;
     }
 
-    ofst << "It is a Fish: name = "
-    << f.name << ", weight: "
-    << f.weight << ", and lives in: "
-    << habitat << std::endl;
+    fprintf(file, "It is a Fish: name = %s , weight: %i, and live in: %s.\n",
+            fi.name, fi.weight, habitat);
 }

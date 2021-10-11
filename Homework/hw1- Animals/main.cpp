@@ -3,27 +3,27 @@
  */
 
 #include <iostream>
-#include <fstream>
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
+#include <stdio.h>
 
 #include "container.h"
 
 void errMessage1() {
-    std::cout << "incorrect command line!\n"
-            "  Waited:\n"
-            "     command -f infile outfile01 outfile02\n"
-            "  Or:\n"
-            "     command -n number outfile01 outfile02\n";
+    printf("%s", "incorrect command line!\n");
+    printf("%s", "  Waited:\n");
+    printf("%s", "     command -f infile outfile01 outfile02\n");
+    printf("%s", "Or:\n");
+    printf("%s", "     command -n number outfile01 outfile02\n");
 }
 
 void errMessage2() {
-    std::cout << "incorrect qualifier value!\n"
-            "  Waited:\n"
-            "     command -f infile outfile01 outfile02\n"
-            "  Or:\n"
-            "     command -n number outfile01 outfile02\n";
+    printf("%s", "incorrect qualifier value!\n");
+    printf("%s", "  Waited:\n");
+    printf("%s", "     command -f infile outfile01 outfile02\n");
+    printf("%s", "Or:\n");
+    printf("%s", "     command -n number outfile01 outfile02\n");
 }
 
 int main(int argc, char* argv[]) {
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    std::cout << "Start" << std::endl;
+    printf("%s", "Start\n");
     container c;
     init(c);
 
@@ -43,14 +43,14 @@ int main(int argc, char* argv[]) {
     else if(!strcmp(argv[1], "-n")) {
         auto size = atoi(argv[2]);
         if((size < 1) || (size > 10000)) {
-            std::cout << "incorrect numer of animals = "
-                 << size
-                 << ". Set 0 < number <= 10000\n";
+            printf("%s", "incorrect numer of animals = ");
+            printf("%i", size);
+            printf("%s", ". Set 0 < number <= 10000\n");
             return 3;
         }
-        // System clock as an initializator
+        // System clock as an initializer
         srand(static_cast<unsigned int>(time(0)));
-        // Заполнение контейнера генератором случайных чисел
+        // Filling container with random value.
         inRnd(c, size);
     }
     else {
@@ -59,15 +59,17 @@ int main(int argc, char* argv[]) {
     }
 
     // Output of container elements to file.
-    std::ofstream ofst1(argv[3]);
-    ofst1 << "Filled container:\n";
-    out(c, ofst1);
+    FILE *f1 = fopen(argv[3], "w");
+    fprintf(f1, "%s", "Filled container:\n");
+    out(c, f1);
+    fclose(f1);
 
+    //TODO
     // The 2nd part of task
     std::ofstream ofst2(argv[4]);
     //ofst2 << "Perimeter sum = " << PerimeterSum(c) << "\n";
 
     clear(c);
-    std::cout << "Stop"<< std::endl;
+    printf("%s", "Stop\n");
     return 0;
 }

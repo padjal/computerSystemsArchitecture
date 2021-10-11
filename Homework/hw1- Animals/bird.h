@@ -17,6 +17,6 @@ void in(bird &bi, std::ifstream &ifst);
 void inRnd(bird &bi);
 
 // Output bird parameters In a formatable stream
-void out(bird &bi, std::ofstream &ofst);
+void out(bird &bi, FILE *f);
 
 #endif //__bird__

@@ -26,7 +26,7 @@ void inRnd(beast &be){
 }
 
 // Output fish parameters In a formatable stream
-void out(beast &be, std::ofstream &ofst){
+void out(beast &be, FILE *file){
     char* type;
 
     switch (be.type) {
@@ -40,8 +40,7 @@ void out(beast &be, std::ofstream &ofst){
             type = "omnivore";
             break;
     }
-    ofst << "It is a Beast: name = "
-    << be.name << ", weight = "
-    << be.weight << ", who is a: "
-    << type << std::endl;
+
+    fprintf(file, "It is a Beast: name = %s , weight: %i, and is: %s.\n",
+            be.name, be.weight, type);
 }

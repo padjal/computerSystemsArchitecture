@@ -46,12 +46,16 @@ void inRnd(container &c, int size) {
     }
 }
 
-//------------------------------------------------------------------------------
-// Вывод содержимого контейнера в указанный поток
-void out(container &c, std::ofstream &ofst) {
-    ofst << "Container contains " << c.len << " elements." << std::endl;
+/**
+ * Output container elements using the given file stream.
+ * @param c The container whose elements are to be displayed.
+ * @param f The file stream used to write out container info.
+ */
+void out(container &c, FILE *f) {
+    fprintf(f,"%s", "Container contains ");
+    fprintf(f, "%i %s", c.len, "elements\n");
     for(int i = 0; i < c.len; i++) {
-        ofst << i << ": ";
-        out(*(c.cont[i]), ofst);
+        fprintf(f,"%i: ", i+1);
+        out(*(c.cont[i]), f);
     }
 }

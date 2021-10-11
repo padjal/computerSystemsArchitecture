@@ -27,7 +27,7 @@ animal *in(std::ifstream &ifst);
 animal *inRnd();
 
 // Display animal details.
-void out(animal &a, std::ofstream &ofst);
+void out(animal &a, FILE *file);
 
 #endif //__animal__
 

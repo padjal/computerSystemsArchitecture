@@ -56,18 +56,18 @@ animal *inRnd(){
     }
 }
 
-void out(animal &a, std::ofstream &ofst){
+void out(animal &a, FILE *f){
     switch (a.k) {
         case animal::FISH:
-            out(a.f, ofst);
+            out(a.f, f);
             break;
         case animal::BIRD:
-            out(a.bi, ofst);
+            out(a.bi, f);
             break;
         case animal::BEAST:
-            out(a.be, ofst);
+            out(a.be, f);
             break;
         default:
-            ofst << "Incorrect figure!" << std::endl;
+            fprintf(f, "%s", "Incorrect figure!\n");
     }
 }
