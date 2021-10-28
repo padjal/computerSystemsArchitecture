@@ -3,25 +3,20 @@
 
 #include <cstdio>
 #include "rnd.h"
+#include "animal.h"
+#include "habitatEnum.h"
 
 // Fish
-struct fish{
-    enum habitat{RIVER, SEA, LAKE};
+class Fish : public Animal{
+public:
+    virtual ~Fish(){}
+    virtual void in(FILE *file);
+    virtual void inRnd();
+    virtual void out(FILE *file);
+    virtual double specialNumber();
 
-    char name[255];
-    int weight;
-    habitat h;
+private:
+    Habitat habitat_;
 };
-
-// Enter fish parameters form file
-void in(fish &f, FILE *file);
-
-// Enter random parameters for fish
-void inRnd(fish &f);
-
-// Output fish parameters In a formatable stream
-void out(fish &fi, FILE *f);
-
-double specialNumber(fish &fi);
 
 #endif //__fish__

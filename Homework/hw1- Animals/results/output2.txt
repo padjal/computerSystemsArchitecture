@@ -1,15 +1,8 @@
-The average special number is: 1.877339
+The average special number is: 2.392504
 The sorted elements are: 
-It is a Fish: name = FishName , weight: 94, lives in: River, and has a special number of: 8.287234
-It is a Bird: name = BirdName , weight: 193, is not migrating, and has a special number: 3.989637
-It is a Fish: name = FishName , weight: 371, lives in: Sea, and has a special number of: 2.099730
-It is a Fish: name = FishName , weight: 406, lives in: Lake, and has a special number of: 1.918719
-It is a Bird: name = BirdName , weight: 253, is migrating, and has a special number: 3.043478
-It is a Fish: name = FishName , weight: 231, lives in: Lake, and has a special number of: 3.372294
-It is a Beast: name = BeastName, weight: 125, is: herbivore, and has a special number: 7.040000
-It is a Bird: name = BirdName , weight: 314, is not migrating, and has a special number: 2.452229
-It is a Fish: name = FishName , weight: 228, lives in: Sea, and has a special number of: 3.416667
-It is a Fish: name = FishName , weight: 331, lives in: Lake, and has a special number of: 2.353474
-It is a Bird: name = BirdName , weight: 73, is not migrating, and has a special number: 10.547945
-It is a Bird: name = BirdName , weight: 208, is not migrating, and has a special number: 3.701923
-It is a Beast: name = BeastName, weight: 267, is: herbivore, and has a special number: 3.295880
+It is a Bird: name = BirdName , weight: 240, is migrating, and has a special number: 3.208333
+It is a Bird: name = BirdName , weight: 112, is migrating, and has a special number: 6.875000
+It is a Beast: name = BeastName, weight: 28, is: omnivore, and has a special number: 31.428571
+It is a Fish: name = FishName , weight: 74, lives in: Lake, and has a special number of: 10.527027
+It is a Bird: name = BirdName , weight: 91, is not migrating, and has a special number: 8.461538
+It is a Beast: name = BeastName, weight: 177, is: omnivore, and has a special number: 4.971751

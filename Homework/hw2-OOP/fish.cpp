@@ -6,60 +6,60 @@
 #include "fish.h"
 
 // Enter fish parameters form file
-void in(fish &f, FILE *file){
+void Fish::in(FILE *file){
     int hab;
-    fscanf(file,"%s", f.name);
-    fscanf(file,"%i", &f.weight);
+    fscanf(file,"%s", name_);
+    fscanf(file,"%i", &weight_);
     fscanf(file,"%i", &hab);
 
     if(hab == 0){
-        f.h = fish::RIVER;
+        habitat_ = River;
     }else if(hab == 1){
-        f.h = fish::SEA;
+        habitat_ = Sea;
     }else if(hab == 2){
-        f.h = fish::LAKE;
+        habitat_ = Lake;
     }
 }
 
 // Enter random parameters for fish
-void inRnd(fish &f){
+void Fish::inRnd(){
     int hab = randomInt(3) % 3;
-    f.weight = randomInt(2000);
-    strcpy(f.name, "FishName");
+    weight_ = randomInt(2000);
+    strcpy(name_, "FishName");
 
     if(hab == 0){
-        f.h = fish::RIVER;
+        habitat_ = River;
     }else if(hab == 1){
-        f.h = fish::SEA;
+        habitat_ = Sea;
     }else if(hab == 2){
-        f.h = fish::LAKE;
+        habitat_ = Lake;
     }
 
 };
 
-// Output fish parameters in a formatable stream
-void out(fish &fi, FILE *file){
+// Output fish parameters in a file stream
+void Fish::out(FILE *file){
     char* habitat;
-    switch (fi.h) {
-        case 0:
+    switch (habitat_) {
+        case River:
             habitat = "River";
             break;
-        case 1:
+        case Sea:
             habitat = "Sea";
             break;
-        case 2:
+        case Lake:
             habitat = "Lake";
             break;
     }
 
     fprintf(file, "It is a Fish: name = %s , weight: %i, lives in: %s, and has a special number of: %f\n",
-            fi.name, fi.weight, habitat, specialNumber(fi));
+            name_, weight_, habitat, specialNumber());
 }
 
-double specialNumber(fish &fi){
+double Fish::specialNumber(){
     double charSum = 0;
-    for (int i = 0 ; i < sizeof(fi.name) / sizeof(fi.name[0]) ; ++i) {
-        charSum += fi.name[i];
+    for (int i = 0 ; i < sizeof(name_) / sizeof(name_[0]) ; ++i) {
+        charSum += name_[i];
     }
-    return charSum / fi.weight;
+    return charSum / weight_;
 }

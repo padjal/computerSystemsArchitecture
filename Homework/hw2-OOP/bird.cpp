@@ -8,49 +8,49 @@
 #include "stdlib.h"
 
 // Enter fish parameters form file
-void in(bird &bi, FILE *file){
+void Bird::in(FILE *file){
     int isMig;
-    fscanf(file,"%s", bi.name);
-    fscanf(file,"%i", &bi.weight);
+    fscanf(file,"%s", name_);
+    fscanf(file,"%i", &weight_);
     fscanf(file,"%i", &isMig);
 
     if(isMig == 0){
-        bi.isMigrating = false;
+        isMigrating_ = false;
     }else if(isMig == 1){
-        bi.isMigrating = true;
+        isMigrating_ = true;
     }
 }
 
 // Enter random parameters for beast
-void inRnd(bird &bi){
+void Bird::inRnd(){
     int isMig = randomInt(2) % 2 + 1;
-    bi.weight = randomInt(2000);
-    strcpy(bi.name, "BirdName");
+    weight_ = randomInt(2000);
+    strcpy(name_, "BirdName");
     if(isMig == 0){
-        bi.isMigrating = false;
+        isMigrating_ = false;
     }else if(isMig == 1){
-        bi.isMigrating = true;
+        isMigrating_ = true;
     }
 };
 
 // Output bird parameters In a formatable stream
-void out(bird &bi, FILE *f){
+void Bird::out(FILE *f){
     char* migrating;
 
-    if(bi.isMigrating){
+    if(isMigrating_){
         migrating = "is";
     }else{
         migrating = "is not";
     }
 
     fprintf(f, "It is a Bird: name = %s , weight: %i, %s migrating, and has a special number: %f\n",
-            bi.name, bi.weight, migrating, specialNumber(bi));
+           name_, weight_, migrating, specialNumber());
 }
 
-double specialNumber(bird &bi){
+double Bird::specialNumber(){
     double charSum = 0;
-    for (int i = 0 ; i < sizeof(bi.name) / sizeof(bi.name[0]) ; ++i) {
-        charSum += bi.name[i];
+    for (int i = 0 ; i < sizeof(name_) / sizeof(name_[0]) ; ++i) {
+        charSum += name_[i];
     }
-    return charSum / bi.weight;
+    return charSum / weight_;
 }

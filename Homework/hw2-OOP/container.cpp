@@ -2,84 +2,84 @@
  * container.cpp - Contains functions for working with a container
  */
 #include "container.h"
-#include "fstream"
 
 /**
- * Initializing the container.
- * @param c A pointer to the container.
+ * Container constructor.
  */
-void init(container &c) {
-    c.len = 0;
+Container::Container(){
+    len_ = 0;
+}
+
+/**
+ * Container destructor.
+ */
+Container::~Container() {
+    clear();
 }
 
 /**
  * Clearing container from elements (Memory cleanup).
- * @param c The specified container.
  */
-void clear(container &c) {
-    for(int i = 0; i < c.len; i++) {
-        delete c.cont[i];
+void Container::clear() {
+    for(int i = 0; i < len_; i++) {
+        delete cont_[i];
     }
-    c.len = 0;
+    len_ = 0;
 }
 
 /**
  * Enter container element from a stream.
- * @param c The container used.
- * @param ifst The stream used.
+ * @param file The file stream used.
  */
-void in(container &c, FILE *file) {
+void Container::in(FILE *file) {
     while(!feof(file)) {
-        if((c.cont[c.len] = in(file)) != 0) {
-            c.len++;
+        if((cont_[len_] = Animal::staticIn(file)) != 0) {
+            len_++;
         }
     }
 }
 
 /**
  * Random input in container.
- * @param c The selected container.
  * @param size The number of elements to be inserted.
  */
-void inRnd(container &c, int size) {
-    while(c.len < size) {
-        if((c.cont[c.len] = inRnd()) != nullptr) {
-            c.len++;
+void Container::inRnd(int size) {
+    while(len_ < size) {
+        if((cont_[len_] = Animal::staticInRnd()) != nullptr) {
+            len_++;
         }
     }
 }
 
 /**
  * Output container elements using the given file stream.
- * @param c The container whose elements are to be displayed.
  * @param f The file stream used to write out container info.
  */
-void out(container &c, FILE *f) {
+void Container::out(FILE *f) {
     fprintf(f,"%s", "Container contains ");
-    fprintf(f, "%i %s", c.len, "elements\n");
-    for(int i = 0; i < c.len; i++) {
+    fprintf(f, "%i %s", len_, "elements\n");
+    for(int i = 0; i < len_; i++) {
         fprintf(f,"%i: ", i+1);
-        out(*(c.cont[i]), f);
+        cont_[i] ->out(f);
     }
 }
 
 /**
  * Sorts the container elements given a predefined condition.
- * @param c
  * @param f
  */
-void sortContainer(container &c, FILE *f){
+void Container::sortContainer(FILE *f){
     double sum = 0.0;
-    for (int i = 0 ; i < c.len ; ++i) {
-        sum += specialNumber(*(c.cont[i]));
+    for (int i = 0 ; i < len_ ; ++i) {
+        sum += cont_[i]->specialNumber();
     }
-    double average = sum/c.len;
+    double average = sum/len_;
     fprintf(f, "The average special number is: %f\n", average);
 
     fprintf(f, "The sorted elements are: \n");
-    for (int i = 0 ; i < c.len ; ++i) {
-        if(specialNumber(*(c.cont[i])) >= average){
-            out(*(c.cont[i]), f);
+    for (int i = 0 ; i < len_ ; ++i) {
+        if(cont_[i]->specialNumber() >= average){
+            cont_[i] ->out(f);
         }
     }
 }
