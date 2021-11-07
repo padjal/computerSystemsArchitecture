@@ -1,8 +1,0 @@
-The average special number is: 2.392504
-The sorted elements are: 
-It is a Bird: name = BirdName , weight: 240, is migrating, and has a special number: 3.208333
-It is a Bird: name = BirdName , weight: 112, is migrating, and has a special number: 6.875000
-It is a Beast: name = BeastName, weight: 28, is: omnivore, and has a special number: 31.428571
-It is a Fish: name = FishName , weight: 74, lives in: Lake, and has a special number of: 10.527027
-It is a Bird: name = BirdName , weight: 91, is not migrating, and has a special number: 8.461538
-It is a Beast: name = BeastName, weight: 177, is: omnivore, and has a special number: 4.971751
