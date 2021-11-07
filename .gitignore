@@ -7,6 +7,10 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+Homework/hw3-python/.idea/**
+Homework/hw1-Animals/.idea/*
+Homework/hw2-OOP/.idea/*
+Homework/hw3-python/.idea/*
 
 # AWS User-specific
 .idea/**/aws.xml
