@@ -4,32 +4,32 @@ from animal import *
 
 
 # ----------------------------------------------
-class Bird(animal):
+class Bird(Animal):
     def __init__(self):
-        self.a = 0
-        self.b = 0
-        self.c = 0
+        super().__init__()
+        self._is_migrating = False
 
     def read_str_array(self, strArray, i):
-        # должно быт как минимум три непрочитанных значения в массиве
         if i >= len(strArray) - 2:
             return 0
-        self.a = int(strArray[i])
-        self.b = int(strArray[i + 1])
-        self.c = int(strArray[i + 2])
+        self.name = strArray[i]
+        self.weight = int(strArray[i + 1])
+        self._is_migrating = bool(strArray[i + 2])
         i += 3
-        # print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c)
         return i
 
     def print(self):
-        print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c, ", special_number = ", self.perimeter())
-        pass
+        print("Bird: name = ", self.name, " weight = ", self.weight,
+              "isMigrating = ", self._is_migrating, ", special_number = ", self.special_number())
 
     def write(self, ostream):
-        ostream.write("Triangle: a = {}  b = {}  c = {}, special_number = {}".format \
-                          (self.a, self.b, self.c, self.perimeter()))
-        pass
+        ostream.write("Bird: name = {}  weight = {}  isMigrating = {}, special_number = {}"
+                      .format(self.name, self.weight, self._is_migrating, self.special_number()))
 
-    def perimeter(self):
-        return float(self.a + self.b + self.c)
-        pass
+    def special_number(self):
+        letters = 0
+
+        for c in self.name:
+            letters += ord(c)
+
+        return letters / self.weight

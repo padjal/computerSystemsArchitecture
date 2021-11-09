@@ -4,32 +4,51 @@ from animal import *
 
 
 # ----------------------------------------------
-class Beast(animal):
+class Beast(Animal):
     def __init__(self):
-        self.a = 0
-        self.b = 0
-        self.c = 0
+        super().__init__()
+        self._type = 1
 
     def read_str_array(self, strArray, i):
         # должно быт как минимум три непрочитанных значения в массиве
         if i >= len(strArray) - 2:
             return 0
-        self.a = int(strArray[i])
-        self.b = int(strArray[i + 1])
-        self.c = int(strArray[i + 2])
+        self.name = strArray[i]
+        self.weight = int(strArray[i + 1])
+        self._type = int(strArray[i + 2])
         i += 3
-        # print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c)
         return i
 
     def print(self):
-        print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c, ", special_number = ", self.perimeter())
-        pass
+        animal_type = ""
+
+        if self._type == 1:
+            animal_type = "Carnivore"
+        elif self._type == 2:
+            animal_type = "Herbivore"
+        elif self._type == 3:
+            animal_type = "Omnivore"
+
+        print("Beast: name = ", self.name, " weight = ", self.weight, "type = ", type,
+              ", special_number = ", self.special_number())
 
     def write(self, ostream):
-        ostream.write("Triangle: a = {}  b = {}  c = {}, special_number = {}".format \
-                          (self.a, self.b, self.c, self.perimeter()))
-        pass
+        animal_type = ""
 
-    def perimeter(self):
-        return float(self.a + self.b + self.c)
-        pass
+        if self._type == 1:
+            animal_type = "Carnivore"
+        elif self._type == 2:
+            animal_type = "Herbivore"
+        elif self._type == 3:
+            animal_type = "Omnivore"
+
+        ostream.write("Beast: name = {}  weigh = {}  type = {}, special_number = {}"
+                      .format(self.name, self.weight, animal_type, self.special_number()))
+
+    def special_number(self):
+        letters = 0
+
+        for c in self.name:
+            letters += ord(c)
+
+        return letters / self.weight

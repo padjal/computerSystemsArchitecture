@@ -7,25 +7,21 @@ def read_str_array(container, strArray):
     figNum = 0
     while i < arrayLen:
         str = strArray[i]
-        key = int(str)  # преобразование в целое
-        # print("key = ", key)
-        if key == 1:  # признак прямоугольника
+        key = int(str)
+        if key == 1:
             i += 1
             shape = Fish()
-            i = shape.read_str_array(strArray, i)  # чтение прямоугольника с возвратом позиции за ним
-        elif key == 2:  # признак треугольника
+            i = shape.read_str_array(strArray, i)
+        elif key == 2:
             i += 1
             shape = Bird()
-            i = shape.read_str_array(strArray, i)  # чтение треугольника с возвратом позиции за ним
-        elif key == 2:  # признак треугольника
+            i = shape.read_str_array(strArray, i)
+        elif key == 3:
             i += 1
             shape = Beast()
-            i = shape.read_str_array(strArray, i)  # чтение треугольника с возвратом позиции за ним
+            i = shape.read_str_array(strArray, i)
         else:
-            # что-то пошло не так. Должен быть известный признак
-            # Возврат количества прочитанных фигур
             return figNum
-        # Количество пробелами фигур увеличивается на 1
         if i == 0:
             return figNum
         figNum += 1

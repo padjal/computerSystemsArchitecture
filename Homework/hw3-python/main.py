@@ -21,8 +21,8 @@ if __name__ == '__main__':
     str = ifile.read()
     ifile.close()
 
-    print(str)
-    print("len(str) = ", len(str))
+    # print(str)
+    # print("len(str) = ", len(str))
 
     # Формирование массива строк, содержащего чистые данные в виде массива строк символов.
     strArray = str.replace("\n", " ").split(" ")
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
     container = Container()
     figNum = read_str_array(container, strArray)
-    container.Print()
+    container.print()
 
     ofile = open(outputFileName, 'w')
     container.write(ofile)

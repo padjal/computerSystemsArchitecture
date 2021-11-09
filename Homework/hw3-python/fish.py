@@ -3,31 +3,50 @@ import animal as animal
 from animal import *
 
 
-# ----------------------------------------------
-class Fish(animal):
+class Fish(Animal):
     def __init__(self):
-        self.a = 0
-        self.b = 0
+        super().__init__()
+        self._habitat = 0
 
     def read_str_array(self, strArray, i):
-        # должно быт как минимум три непрочитанных значения в массиве
         if i >= len(strArray) - 2:
             return 0
-        self.a = int(strArray[i])
-        self.b = int(strArray[i + 1])
+        self.name = strArray[i]
+        self.weight = int(strArray[i + 1])
+        self._habitat = int(strArray[i + 2])
         i += 3
-        # print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c)
         return i
 
     def print(self):
-        print("Triangle: a = ", self.a, " b = ", self.b, "c = ", self.c, ", special_number = ", self.perimeter())
-        pass
+        habitat = ""
+
+        if self._habitat == 0:
+            habitat = "River"
+        elif self._habitat == 1:
+            habitat = "Sea"
+        elif self._habitat == 2:
+            habitat = "Lake"
+
+        print("Fish: name = ", self.name, " weight = ", self.weight, "habitat = ", habitat, ", special_number = ",
+              self.special_number())
 
     def write(self, ostream):
-        ostream.write("Triangle: a = {}  b = {}  c = {}, special_number = {}".format \
-                          (self.a, self.b, self.c, self.perimeter()))
-        pass
+        habitat = ""
 
-    def perimeter(self):
-        return float(self.a + self.b + self.c)
-        pass
+        if self._habitat == 0:
+            habitat = "River"
+        elif self._habitat == 1:
+            habitat = "Sea"
+        elif self._habitat == 2:
+            habitat = "Lake"
+
+        ostream.write("Fish: name = {}  weight = {}  habitat = {}, special_number = {}".
+                      format(self.name, self.weight, habitat, self.special_number()))
+
+    def special_number(self):
+        letters = 0
+
+        for c in self.name:
+            letters += ord(c)
+
+        return letters / self.weight
