@@ -1,0 +1,6 @@
+There are 3 animals:
+Bird: name = Bird1  weight = 50  isMigrating = True, special_number = 8.68
+Beast: name = Beast1  weigh = 90  type = , special_number = 6.044444444444444
+Beast: name = Beast2  weigh = 130  type = Carnivore, special_number = 4.1923076923076925
+Sum of special numbers  = 18.916752136752137
+The sorted animals are: Bird: name = Bird1  weight = 50  isMigrating = True, special_number = 8.68

@@ -1,28 +1,27 @@
 from extender import *
 
 
-def read_str_array(container, strArray):
-    arrayLen = len(strArray)
-    i = 0  # Индекс, задающий текущую строку в массиве
+def read_str_array(container, data):
+    index = 0
     figNum = 0
-    while i < arrayLen:
-        str = strArray[i]
+    while index < len(data):
+        str = data[index]
         key = int(str)
         if key == 1:
-            i += 1
+            index += 1
             shape = Fish()
-            i = shape.read_str_array(strArray, i)
+            index = shape.read_str_array(data, index)
         elif key == 2:
-            i += 1
+            index += 1
             shape = Bird()
-            i = shape.read_str_array(strArray, i)
+            index = shape.read_str_array(data, index)
         elif key == 3:
-            i += 1
+            index += 1
             shape = Beast()
-            i = shape.read_str_array(strArray, i)
+            index = shape.read_str_array(data, index)
         else:
             return figNum
-        if i == 0:
+        if index == 0:
             return figNum
         figNum += 1
         container.store.append(shape)

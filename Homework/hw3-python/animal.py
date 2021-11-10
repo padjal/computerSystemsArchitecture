@@ -1,4 +1,3 @@
-# ----------------------------------------------
 class Animal:
     def __init__(self):
         self.name = ""
@@ -17,4 +16,9 @@ class Animal:
         pass
 
     def special_number(self):
-        pass
+        letters = 0
+
+        for c in self.name:
+            letters += ord(c)
+
+        return letters / self.weight
