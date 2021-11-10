@@ -33,7 +33,7 @@ architectural pattern using python. It is composed of the following files:
     read_str_array.py
 
 #### Memory
-These files take 7,3kB. The compiled project file takes 116,5kB.
+These files take 7,3kB.
 
 #### Memory allocation
 ![Program memory](resources/program_memory.png)
